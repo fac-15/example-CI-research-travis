@@ -19,3 +19,41 @@ test('Home route', (t) => {
       t.end();
     });
 });
+
+// elephants
+test('Elephants route returns a 404', (t) => {
+  supertest(router)
+    .get('/elephants')
+    .expect(404)
+    .expect('Content-Type', /html/)
+    .end((err, res) => {
+        t.error(err);
+        t.equal(res.text, 'unknown uri', 'response should contain "unknown uri"');
+        console.log(typeof res.text); // returns result type
+        t.end();
+    });
+})
+
+// blog post without potato
+test('Blog route - POST without potato password', (t) => {
+  supertest(router)
+    .post('/blog')
+    .expect(403)
+    .end((err, res) => {
+        t.error(err);
+        t.equal(res.text, 'Forbidden', 'response should be Forbidden');
+        t.end();
+    });
+})
+
+// failing test
+test('Blog route - POST fails, wrong password, but expect parameter entered below', (t) => {
+  supertest(router)
+    .post('/blog')
+    .expect(200)
+    .end((err, res) => {
+        t.error(err);
+        t.equal(res.text, 'pass', '200 code');
+        t.end();
+    });
+})
