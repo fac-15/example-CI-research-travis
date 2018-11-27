@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/fac-15/example-CI-research-travis.svg?branch=master)](https://travis-ci.org/fac-15/example-CI-research-travis)
+
 # WE COPIED THIS FROM A WORKSHOP REPO. PLEASE IGNORE. I REPEAT, PLEASE IGNORE.
 
 ## Test Driven Development Server with Tape and Supertest
