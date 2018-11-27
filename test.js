@@ -19,3 +19,14 @@ test('Home route', (t) => {
       t.end();
     });
 });
+
+test('GET Elephants route returns a status code of 404', (t) => {
+  supertest(router)
+  .get('/elephants')
+  .expect(404)
+  .end((err, res) => {
+    t.error(err);
+    t.equal(res.text, 'unknown uri', 'Should return "unknown uri"')
+    t.end();
+  });
+});
