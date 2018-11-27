@@ -30,3 +30,17 @@ test('GET Elephants route returns a status code of 404', (t) => {
     t.end();
   });
 });
+
+// GET blog
+test('GET blog route returns a ["one", "two", "three"]', (t) => {
+  supertest(router)
+  .get('/blog')
+  .expect(200)
+  .end((err, res) => {
+    t.error(err);
+    t.equal(typeof res.text, 'string', 'Should return string')
+    t.equal(res.text, '["one","two","three"]', 'Should return an array string (equals)')
+    t.deepEquals(JSON.parse(res.text), ["one","two","three"], 'Should return an array (deep equals)')
+    t.end();
+  });
+});
