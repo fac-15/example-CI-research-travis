@@ -1,4 +1,6 @@
-# Test Driven Development Server with Tape and Supertest
+# WE COPIED THIS FROM A WORKSHOP REPO. PLEASE IGNORE. I REPEAT, PLEASE IGNORE.
+
+## Test Driven Development Server with Tape and Supertest
  ## IMPORTANT! Do NOT clone this repo!
  Repeat: DO NOT CLONE! This whole repo IS the solution to the challenge, so please read below for further instructions :wink:
 
